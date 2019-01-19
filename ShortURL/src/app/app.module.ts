@@ -26,11 +26,14 @@ import { I18n } from 'src/i18n';
 import { AlertHandler } from 'src/handlers/alert.handler';
 import { HomePage } from 'src/pages/public/home/home.page';
 import { UrlService } from 'src/services/UrlService';
+import { HeaderComponent } from 'src/components/header/header.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+
+    HeaderComponent,
 
     HomePage
   ],

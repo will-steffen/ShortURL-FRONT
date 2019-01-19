@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { I18n } from "src/i18n";
 import { UrlService } from "src/services/UrlService";
 import { NgBlockUI, BlockUI } from "ng-block-ui";
+import { ShortUrl } from "src/models/entities/short-url";
 
 @Component({
     selector: 'app-home',
@@ -11,7 +12,7 @@ import { NgBlockUI, BlockUI } from "ng-block-ui";
 export class HomePage {  
 
     urlInput: string = '';
-    urlShort: string = '';
+    shortUrl: ShortUrl = null;
 
     @BlockUI() blockUI: NgBlockUI;
     constructor(
@@ -24,7 +25,7 @@ export class HomePage {
         this.urlService.getShortUrl(this.urlInput)
             .then(url => {
                 this.urlInput = url.original;
-                this.urlShort = url.shortUrl;
+                this.shortUrl = url;
             })
             .catch(err => { console.log(err) })
             .then(() => this.blockUI.stop());

@@ -1,0 +1,62 @@
+@import '../../../styles/vars.less';
+
+@input-border-radius: 5px;
+@button-width: 100px;
+
+.input-area{
+    height: 100vh;
+    background-image: url('/assets/img/bg.png');
+    display: flex;    
+    justify-content: center;
+    .content{
+        display: flex;      
+        align-items: center;  
+        padding: @app-padding;
+        flex-direction: column;
+        .url-input-content{
+            flex: 1;
+            display: flex;
+            align-items: flex-end; 
+            width: 90vw;
+            max-width: 700px;
+            input, button{
+                padding: 20px;
+                font-size: 1.3rem;
+                border: none;
+                outline: none;               
+            }
+            input {
+                border-radius: @input-border-radius 0 0 @input-border-radius;            
+                width: ~'calc(100% - ' @button-width ~')';                
+                box-shadow: inset 0 0 5px @color-primary,;
+                &:focus  {
+                    background-color: lighten(@color-primary, 38);            }  
+            }
+            button {
+                border-radius: 0 @input-border-radius  @input-border-radius 0;
+                background-color: @color-primary;
+                width: @button-width;
+                color: @color-primary-inverse;
+                background-image: url('/assets/img/link.png');
+                background-size: contain;
+                background-position: center;
+    
+            }
+        }
+        .result-shot-url{
+            flex: 1;
+            display: flex;
+            align-items: flex-start; 
+            width: 100%;
+            .card{
+                width: 100%;
+                padding: @app-padding;
+                background-color: gray;
+                margin-top: @app-padding;
+                border-radius: @input-border-radius;
+            }
+        }
+        
+        
+    }
+}

@@ -5,7 +5,10 @@ export let Locale: LocaleType  ={
     code: Language.EN,
     appTitle: 'ShortURL',
     page: {
-        
+        home: {
+            signup: 'Sign Up',
+            signin: 'Sign In',
+        }
     },
     general: {        
         no: 'No',

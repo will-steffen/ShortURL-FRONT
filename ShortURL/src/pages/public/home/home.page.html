@@ -1,5 +1,21 @@
-<input type="text" [(ngModel)]="urlInput" >
-<br>
-<button (click)="createShortUrl()">OK</button>
-<br><br><br>
-<a href="{{ urlShort }}" target="_blank">{{ urlShort }}</a>
+<app-header></app-header>
+
+<div class="input-area">
+    <div class="content">
+        <div class="url-input-content">
+            <input type="text" [(ngModel)]="urlInput" (keydown.enter)="createShortUrl()"
+            ><button (click)="createShortUrl()" class="btn">&nbsp;</button>
+        </div>
+        <div class="result-shot-url">
+            <div class="card" *ngIf="shortUrl">
+                {{ shortUrl.original }} <br>
+                <a href="{{ shortUrl.shortUrl }}" target="_blank">{{ shortUrl.shortUrl }}</a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+
