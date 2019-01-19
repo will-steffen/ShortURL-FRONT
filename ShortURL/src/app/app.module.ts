@@ -1,11 +1,30 @@
+import '../utils/array';
+import '../utils/string';
+import '../utils/date';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+
+import { BlockUIModule } from 'ng-block-ui';
+import { ToastrModule } from 'ngx-toastr';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+import { SidebarModule } from 'primeng/sidebar';
+import { OverlayPanelModule } from 'primeng/overlaypanel';
+import { TableModule } from 'primeng/table';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ConfirmationService } from 'primeng/api';
+
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HomePage } from '../pages/public/home/home.page';
+import { ServiceHandler } from 'src/handlers/service.handler';
+import { I18n } from 'src/i18n';
+import { AlertHandler } from 'src/handlers/alert.handler';
+import { HomePage } from 'src/pages/public/home/home.page';
 
 
 @NgModule({
@@ -15,13 +34,27 @@ import { HomePage } from '../pages/public/home/home.page';
     HomePage
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    BlockUIModule.forRoot(),
+    ToastrModule.forRoot(),
+    FontAwesomeModule,
+    OverlayPanelModule,
+    SidebarModule,
+    TableModule,
+    ConfirmDialogModule
   ],
-  providers: [],
+  providers: [
+    ConfirmationService,
+
+    ServiceHandler,
+    AlertHandler,
+    I18n,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

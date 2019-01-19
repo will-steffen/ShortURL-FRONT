@@ -5,6 +5,6 @@ import { Component } from "@angular/core";
     templateUrl: './home.page.html',
     styleUrls: ['./home.page.less']
 })
-export class HomePage {
+export class HomePage {  
 
 }
