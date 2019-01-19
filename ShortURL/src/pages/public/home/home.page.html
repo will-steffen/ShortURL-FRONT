@@ -1,1 +1,5 @@
-Home Page!
+<input type="text" [(ngModel)]="urlInput" >
+<br>
+<button (click)="createShortUrl()">OK</button>
+<br><br><br>
+<a href="{{ urlShort }}" target="_blank">{{ urlShort }}</a>

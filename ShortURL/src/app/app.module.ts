@@ -25,6 +25,7 @@ import { ServiceHandler } from 'src/handlers/service.handler';
 import { I18n } from 'src/i18n';
 import { AlertHandler } from 'src/handlers/alert.handler';
 import { HomePage } from 'src/pages/public/home/home.page';
+import { UrlService } from 'src/services/UrlService';
 
 
 @NgModule({
@@ -54,6 +55,8 @@ import { HomePage } from 'src/pages/public/home/home.page';
     ServiceHandler,
     AlertHandler,
     I18n,
+
+    UrlService
   ],
   bootstrap: [AppComponent]
 })
