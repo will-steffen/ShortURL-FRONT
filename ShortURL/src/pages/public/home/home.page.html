@@ -19,17 +19,7 @@
                     <div class="original-url">
                         <a href="{{ shortUrl.original }}" target="_blank">{{ shortUrl.original }}</a>
                     </div>  
-                    <div class="short-url">  
-                        <a href="{{ shortUrl.shortUrl }}" target="_blank">{{ shortUrl.shortUrl }}</a>
-                        <button class="btn-transparent btn" (click)="copyShortUrlLink()">
-                            {{ i18n.t.general.copy }}
-                        </button>
-                        <a class="info-link" *ngIf="shortUrl.showCount">
-                            {{ shortUrl.countClick }} <fa-icon [icon]="icon.pointer"></fa-icon>
-                        </a>
-                        
-                        <input  [(ngModel)]="shortUrl.shortUrl" class="hidden-short-url" #shortUrlLink>
-                    </div>
+                    <app-short-url-present [shortUrl]="shortUrl"></app-short-url-present>
                 </div>
             </div>
         </div>

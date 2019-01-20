@@ -1,0 +1,29 @@
+
+
+<div class="content-area ignore-nav">
+    <div class="info" *ngIf="shortUrl">
+
+        <div class="short-url-header card">
+            <div class="create-date"> Criado em {{ getDateFormat(shortUrl.createDate) }} </div>
+
+            <div class="metadata-title"> 
+                    <a href="{{ shortUrl.original }}" target="_blank">{{ linkTitle ? linkTitle : '---' }}  </a>
+            </div>
+
+            <div class="original-url"> 
+                <a href="{{ shortUrl.original }}" target="_blank">{{ shortUrl.original }} </a>
+            </div>
+
+            <app-short-url-present [shortUrl]="shortUrl"></app-short-url-present>
+        </div>
+        
+        <div class="click-list">
+            <div class="card" *ngFor="let click of shortUrl.clickList">
+                <div class="create-date">{{ getDateFormat(click.createDate) }}</div>
+                <div class="click-ip">{{ click.ip }}</div>                
+            </div>
+        </div>
+     
+    </div>
+
+</div>

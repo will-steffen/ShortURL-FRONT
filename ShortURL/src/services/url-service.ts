@@ -37,7 +37,23 @@ export class UrlService {
             let user = this.userService.getUser();
             if(!user) return resolve([]); 
             this.service.Get(ApiRoute.url.last + "/" + user.id)
-                .then(data => { resolve(data.map(x => ShortUrl.fromData(x))); })
+                .then(data => { resolve(data.map(x => ShortUrl.fromData(x))) })
+                .catch(err => { reject(err) });
+        });
+    }
+
+    getStats(code: string): Promise<ShortUrl>{
+        return new Promise((resolve, reject) => {
+            this.service.Get(ApiRoute.url.stats + "/" + code)
+                .then(data => { resolve(ShortUrl.fromData(data)) })
+                .catch(err => { reject(err) });
+        });
+    }
+
+    getUrlTitle(code: string): Promise<{title: string}>{
+        return new Promise((resolve, reject) => {
+            this.service.Get(ApiRoute.url.title + "/" + code)
+                .then(data => { resolve(data) })
                 .catch(err => { reject(err) });
         });
     }

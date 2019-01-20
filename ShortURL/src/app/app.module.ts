@@ -30,6 +30,8 @@ import { HeaderComponent } from 'src/components/header/header.component';
 import { NotFoundPage } from 'src/pages/public/not-found/not-found.page';
 import { FooterComponent } from 'src/components/footer/footer.component';
 import { UserService } from 'src/services/user-service';
+import { StatsPage } from 'src/pages/public/stats/stats.page';
+import { ShortUrlPresentComponent } from 'src/components/short-url-present/short-url-present.component';
 
 
 @NgModule({
@@ -38,9 +40,11 @@ import { UserService } from 'src/services/user-service';
 
     HeaderComponent,
     FooterComponent,
+    ShortUrlPresentComponent,
 
     HomePage,
-    NotFoundPage
+    NotFoundPage,
+    StatsPage
   ],
   imports: [
     AppRoutingModule,

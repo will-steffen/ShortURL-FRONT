@@ -1,12 +1,11 @@
-import { Component, ViewChild, ElementRef, OnInit } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { I18n } from "src/i18n";
 import { UrlService } from "src/services/url-service";
 import { NgBlockUI, BlockUI } from "ng-block-ui";
 import { ShortUrl } from "src/models/entities/short-url";
 import { HttpStatus } from "src/enums/http-status";
-import { AlertHandler } from "src/handlers/alert.handler";
-import { faMousePointer } from "@fortawesome/free-solid-svg-icons";
 import { RouteConfig } from "src/enums/route-config";
+import { Router } from "@angular/router";
 
 @Component({
     selector: 'app-home',
@@ -18,17 +17,13 @@ export class HomePage implements OnInit {
     titleIndex = 0;
     urlInput: string = '';
     shortUrlList: ShortUrl[] = [];
-    linkProblem = false;
-    @ViewChild('shortUrlLink') shortUrlLink: ElementRef;
-    
-    icon = {
-        pointer: faMousePointer
-    }
+    linkProblem = false;    
 
     @BlockUI() blockUI: NgBlockUI;
     constructor(
         public i18n: I18n,
-        private urlService: UrlService
+        private urlService: UrlService,
+        private router: Router
     ) { 
         this.titleIndex = Math.floor((i18n.t.page.home.title.length) * Math.random() - 0.01);
         this.countClickLoop();
@@ -59,12 +54,7 @@ export class HomePage implements OnInit {
                 // this.shortUrl = null;
              })
             .then(() => this.blockUI.stop());
-    }
-
-    copyShortUrlLink() {
-        this.shortUrlLink.nativeElement.select();
-        document.execCommand("copy");
-    }
+    }   
 
     countClickLoop() {
         if(window.location.pathname.contains(RouteConfig.home)){
@@ -79,4 +69,5 @@ export class HomePage implements OnInit {
             setTimeout(() => { this.countClickLoop() }, 2000);
         }
     }
+    
 }

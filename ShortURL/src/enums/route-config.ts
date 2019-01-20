@@ -1,6 +1,7 @@
 
 export const RouteConfig = { 
     home: '',
-    notFound: 'not-found'  
+    notFound: 'not-found',
+    stats: 'stats'
 }
 
