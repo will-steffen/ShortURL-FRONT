@@ -1,0 +1,34 @@
+@import '../../../styles/vars.less';
+
+.content-area{
+    display: flex;
+    @media screen and (max-width: 700px){
+        &{
+            display: block;
+            padding-top: @app-header-height;
+        }
+    } 
+    .right, .left{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+    }    
+    .right{
+        .not-found-sign{
+            width: 60%;
+            max-width: 350px;
+        }
+    }
+    .left{
+        padding: @app-padding;
+        .message{
+            max-width: 400px;            
+        }
+    }
+    .btn{
+        padding: 10px 30px;
+        font-size: 1em;
+        margin-top: 20px;
+    }
+}

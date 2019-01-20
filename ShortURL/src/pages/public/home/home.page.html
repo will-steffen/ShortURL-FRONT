@@ -1,15 +1,30 @@
-<app-header></app-header>
-
-<div class="input-area">
+<div class="content-area">
     <div class="content">
-        <div class="url-input-content">
-            <input type="text" [(ngModel)]="urlInput" (keydown.enter)="createShortUrl()"
-            ><button (click)="createShortUrl()" class="btn">&nbsp;</button>
+        <div class="url-input-area">
+            <div class="title">
+                <div>
+                    <h1>{{ i18n.t.page.home.title[titleIndex] }}</h1>
+                    <h2>{{ i18n.t.page.home.description }}</h2>
+                </div>                
+            </div>           
+            <div class="url-input-content">
+                <input type="text" [(ngModel)]="urlInput" (keydown.enter)="createShortUrl()"
+                [class.link-problem]="linkProblem"
+                ><button (click)="createShortUrl()" class="btn">&nbsp;</button>
+            </div>
         </div>
         <div class="result-shot-url">
-            <div class="card" *ngIf="shortUrl">
-                {{ shortUrl.original }} <br>
-                <a href="{{ shortUrl.shortUrl }}" target="_blank">{{ shortUrl.shortUrl }}</a>
+            <div class="card" *ngIf="shortUrl">       
+                <div class="original-url">
+                    <a href="{{ shortUrl.original }}" target="_blank">{{ shortUrl.original }}</a>
+                </div>  
+                <div class="short-url">  
+                    <a href="{{ shortUrl.shortUrl }}" target="_blank">{{ shortUrl.shortUrl }}</a>
+                    <button class="btn-transparent btn" (click)="copyShortUrlLink()">
+                        {{ i18n.t.general.copy }}
+                    </button>
+                    <input  [(ngModel)]="shortUrl.shortUrl" class="hidden-short-url" #shortUrlLink>
+                </div>
             </div>
             
         </div>

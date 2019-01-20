@@ -27,6 +27,8 @@ import { AlertHandler } from 'src/handlers/alert.handler';
 import { HomePage } from 'src/pages/public/home/home.page';
 import { UrlService } from 'src/services/UrlService';
 import { HeaderComponent } from 'src/components/header/header.component';
+import { NotFoundPage } from 'src/pages/public/not-found/not-found.page';
+import { FooterComponent } from 'src/components/footer/footer.component';
 
 
 @NgModule({
@@ -34,8 +36,10 @@ import { HeaderComponent } from 'src/components/header/header.component';
     AppComponent,
 
     HeaderComponent,
+    FooterComponent,
 
-    HomePage
+    HomePage,
+    NotFoundPage
   ],
   imports: [
     AppRoutingModule,
