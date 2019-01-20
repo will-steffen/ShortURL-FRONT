@@ -1,10 +1,13 @@
 <div class="content-area">
+    <img src="assets/img/not-found-cloud.svg" #cloud1 class="cloud">
+    <img src="assets/img/not-found-cloud.svg" #cloud2 class="cloud">
+    <img src="assets/img/not-found-cloud.svg" #cloud3 class="cloud">
     <div class="left">
         <div class="message">
             <h1>{{ i18n.t.page.notFound.ops }}</h1>
             <h2>
                 {{ i18n.t.page.notFound.mainMessage }}<br>
-                <button class="btn">{{ i18n.t.page.notFound.createLink }}</button>
+                <button class="btn" (click)="createLink()">{{ i18n.t.page.notFound.createLink }}</button>
             </h2>
             
         </div>        

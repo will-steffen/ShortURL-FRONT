@@ -25,10 +25,11 @@ import { ServiceHandler } from 'src/handlers/service.handler';
 import { I18n } from 'src/i18n';
 import { AlertHandler } from 'src/handlers/alert.handler';
 import { HomePage } from 'src/pages/public/home/home.page';
-import { UrlService } from 'src/services/UrlService';
+import { UrlService } from 'src/services/url-service';
 import { HeaderComponent } from 'src/components/header/header.component';
 import { NotFoundPage } from 'src/pages/public/not-found/not-found.page';
 import { FooterComponent } from 'src/components/footer/footer.component';
+import { UserService } from 'src/services/user-service';
 
 
 @NgModule({
@@ -63,7 +64,8 @@ import { FooterComponent } from 'src/components/footer/footer.component';
     AlertHandler,
     I18n,
 
-    UrlService
+    UrlService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

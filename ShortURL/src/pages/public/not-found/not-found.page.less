@@ -2,6 +2,7 @@
 
 .content-area{
     display: flex;
+    position: relative;
     @media screen and (max-width: 700px){
         &{
             display: block;
@@ -30,5 +31,13 @@
         padding: 10px 30px;
         font-size: 1em;
         margin-top: 20px;
+    }
+    .cloud{
+        position: absolute;
+        width: 10vw;
+        top: 50vh;
+        transition: 120s;
+        transition-timing-function: linear;
+        z-index: -100000;
     }
 }

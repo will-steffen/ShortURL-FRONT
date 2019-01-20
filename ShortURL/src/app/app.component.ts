@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { faTimes, faCheck } from '@fortawesome/free-solid-svg-icons';
 import { I18n } from 'src/i18n';
+import { UserService } from 'src/services/user-service';
 
 @Component({
     selector: 'app-root',
@@ -14,5 +15,10 @@ export class AppComponent {
         yes: faCheck
     }
     
-    constructor(public i18n: I18n) { }    
+    constructor(
+        public i18n: I18n,
+        private userService: UserService
+    ) { 
+        userService.checkUser();
+    }    
 }
