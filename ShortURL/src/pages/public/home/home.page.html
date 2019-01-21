@@ -1,0 +1,31 @@
+<div class="content-area">
+    <div class="content">
+        <div class="url-input-area">
+            <div class="title">
+                <div>
+                    <h1>{{ i18n.t.page.home.title[titleIndex] }}</h1>
+                    <h2>{{ i18n.t.page.home.description }}</h2>
+                </div>                
+            </div>           
+            <div class="url-input-content">
+                <input type="text" [(ngModel)]="urlInput" (keydown.enter)="createShortUrl()"
+                [class.link-problem]="linkProblem"
+                ><button (click)="createShortUrl()" class="btn">&nbsp;</button>
+            </div>
+        </div>
+        <div class="result-shot-url">
+            <div class="card-list"> 
+                <div class="card" *ngFor="let shortUrl of shortUrlList">       
+                    <div class="original-url">
+                        <a href="{{ shortUrl.original }}" target="_blank">{{ shortUrl.original }}</a>
+                    </div>  
+                    <app-short-url-present [shortUrl]="shortUrl"></app-short-url-present>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

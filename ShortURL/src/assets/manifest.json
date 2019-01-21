@@ -1,0 +1,9 @@
+{
+    "name": "Short URL",
+    "short_name": "Short URL",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#efefef",
+    "description": "Short URL"
+  }
+  

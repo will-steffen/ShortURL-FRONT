@@ -1,0 +1,50 @@
+@import '../../../styles/vars.less';
+
+.info{
+    width: 100%;
+    max-width:  @app-view-centered-max-width;
+}
+
+.card{
+    width: 100%;
+    background-color: @color-light;
+    border-radius: 10px;
+    padding: @app-padding;  
+    margin-bottom: 5px;  
+}
+
+.short-url-header{
+    margin-bottom: @app-padding; 
+    border: 1px solid @color-primary;
+    .metadata-title{
+        a{
+            color: @color-dark;
+            font-size: 1.8rem;
+        }        
+    }
+    .original-url{
+        a{
+            color: lighten(@color-dark, 20);
+            font-size: 0.8rem;
+        }   
+        margin-bottom: 20px;        
+    }
+}
+
+.create-date{
+    text-transform: uppercase;
+    color: lighten(@color-primary, 20);
+    margin-bottom: 10px;
+    font-size: 1rem;    
+}
+
+.click-list{
+    width: 100%;
+    .create-date{
+        display: inline-block;
+        margin: 0;
+    }
+    .click-ip{
+        float: right;
+    }
+}

@@ -1,0 +1,16 @@
+<nav>
+    <div class="logo" (click)="goHome()">
+        <img src="assets/img/logo.svg">
+    </div>  
+    <div class="center">
+
+    </div>
+    <div class="buttons">
+        <div class="language">
+            <button class="btn uk-flag flag" (click)="changeLanguage(Language.EN)"></button>
+            <button class="btn br-flag flag" (click)="changeLanguage(Language.PTBR)"></button>
+        </div>
+        <button class="button"> {{ i18n.t.page.home.signin }} </button>
+        <button class="featured btn">{{ i18n.t.page.home.signup }}</button>
+    </div>  
+</nav>

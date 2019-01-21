@@ -1,0 +1,19 @@
+<app-header></app-header>
+<router-outlet></router-outlet>
+<!-- <app-footer></app-footer> -->
+
+
+<block-ui message=""></block-ui>
+
+<p-confirmDialog width="350" #confimationDialog [closable]="false">
+    <p-footer class="confirm-dialog-footer">
+        <button (click)="confimationDialog.reject()" class="btn btn-inverse">
+            <fa-icon [icon]="icon.no"></fa-icon>
+            {{ i18n.t.general.no }}
+        </button>
+        <button (click)="confimationDialog.accept()" class="btn">
+            <fa-icon [icon]="icon.yes"></fa-icon>
+            {{ i18n.t.general.yes }}
+        </button>
+    </p-footer>
+</p-confirmDialog>
